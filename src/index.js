@@ -2,20 +2,13 @@
 import React from 'react';
 
 // 2) Tener la variable reactDOM en scope
-import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './styles.scss';
 
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function App() {
-  return "Hola mundo"
-}
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-
-// reportWebVitals();
+// 4) Hacer render de la App en el DOM
+root.render(<App />);
