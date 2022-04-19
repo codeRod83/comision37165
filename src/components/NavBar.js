@@ -1,3 +1,5 @@
+import CartWidget from './CartWidget';
+
 const NavBar = () => { 
     return (
         <>
@@ -6,7 +8,7 @@ const NavBar = () => {
             <nav className="header__nav navbar navbar-light pt-1">
               <div className="header__logo container">
                 <a className="navbar-brand" href="./index.html">
-                  <img src="./logo.png" alt="Imagen Logo RM Sistemas Informaticos" width="180" height="180" /></a>
+                  <img src="./logo.png" alt="Imagen Logo RM Sistemas Informaticos" width="170" height="170" /></a>
               </div>
             </nav>
             <button className="header__button navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +36,7 @@ const NavBar = () => {
                 </li>
               </ul>
             </div>
+            <CartWidget />
           </div>
         </nav>
       </>
