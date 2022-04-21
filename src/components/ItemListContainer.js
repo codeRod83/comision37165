@@ -1,7 +1,13 @@
 const ItemListContainer = (props) => {
-    const titulo = 'Catalogo de productos 2';
+    
     return (
-        <ItemListContainer titulo={ titulo}/>
+        <>
+        <div className="container mt-5 text-center">
+          <h3>
+            ¡ Bienvenido al catalogo de {props.name} !
+          </h3>
+        </div>
+        </>
 )
 }
-export default ItemListContainer
+export default ItemListContainer;

@@ -7,10 +7,10 @@ const App = () => {
     <header>
       <NavBar />
     </header>
-    <main>
-        <ItemListContainer />
-      </main>
-      </>
+    <main className="container">
+        <ItemListContainer name='RM Sistemas' />
+    </main>
+    </>
     )
   
 }
