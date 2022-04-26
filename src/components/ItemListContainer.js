@@ -1,3 +1,5 @@
+import ItemCount from "./ItemCount"
+
 const ItemListContainer = (props) => {
     
     return (
@@ -7,6 +9,7 @@ const ItemListContainer = (props) => {
             ¡ Bienvenido al catalogo de {props.name} !
           </h3>
         </div>
+        <ItemCount />
         </>
 )
 }
