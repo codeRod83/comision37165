@@ -3,8 +3,7 @@ import ItemCount from "./ItemCount"
 
 const Item = ({ id, nombre, marca, costo, cantidad, thumbnailUrl }) => {
     const onAdd = (count) => {
-        alert(` Se agregaron ${count}\n ${nombre} \n
-                      al Carrito`);
+        alert(` Se agregaron ${count}\n ${nombre} \n al Carrito`);
     }
 
     return (
