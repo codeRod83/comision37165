@@ -4,7 +4,6 @@ import React from 'react';
 // 2) Tener la variable reactDOM en scope
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min';
-import Swal from 'sweetalert2';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles.scss';

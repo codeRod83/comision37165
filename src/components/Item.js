@@ -1,13 +1,10 @@
+import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount'
+
 const Item = ({ producto, detalle }) => {
     const onAdd = (count) => {
         alert(` Se agregaron ${count}\n ${producto.nombre} \n al Carrito`);
     }
-    
-    // const muestraDetalle = () => {
-    //     let id = producto.id
-    //     return id
-    // }
     
     if (detalle) {
         return (
@@ -49,12 +46,11 @@ const Item = ({ producto, detalle }) => {
                 </p>
             </div>
             <div className="container mt-3 text-center gap-2 mb-4">
-                <button
-                    className="btn btn-warning"
-                    // onClick={muestraDetalle}
-                >
-                    Detalles
-                </button>
+                <Link to={`/detalle/${producto.id}`}>
+                    <button className="btn btn-warning">
+                        Ver Detalle
+                    </button>
+                </Link>
             </div>
         </div>
     )

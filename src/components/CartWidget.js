@@ -1,8 +1,12 @@
+import { NavLink } from "react-router-dom"
+
 const CartWidget = () => {
     return (
-        <span className="material-icons">
-        shopping_cart
-        </span>
+        <NavLink to="/Cart" >
+            <span className="material-icons">
+                shopping_cart
+            </span>
+        </NavLink>
     )
 }
 export default CartWidget

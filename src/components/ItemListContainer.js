@@ -1,47 +1,46 @@
+import { traeProductos } from '../data/data'
 import React, { useState, useEffect } from 'react'
-import { listaProductos } from '../data/data'
+import { useParams } from 'react-router-dom'
 import ItemList from "./ItemList"
 
 const ItemListContainer = (props) => {
   
-  const [cargando, setCargando] = useState(true)
   const [productos, setProductos] = useState([])
+  const [cargando, setCargando] = useState(true)
+  const { categoriaId } = useParams()
   
-  const traeProductos = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(listaProductos)
-    }, 2000)
-  })
-  
-  const traeProductosdeData = async () => {
-    try {
-      const resultado = await traeProductos
-      setCargando(false)
-      setProductos(resultado)
-    }
-    catch (error) {
-      console.log(error)
-      alert('Los productos no se pudieron cargar')
-    }
-  }
   useEffect(() => {
-    traeProductosdeData()
-  }, [])
-  
+    if (categoriaId) {
+      traeProductos
+        .then(resultado => setProductos(resultado.filter(item => item.categoria === categoriaId)))
+          .catch(error => console.log(error))
+          .finally(() => setCargando(false))
+    } else {
+      traeProductos
+        .then(resultado => setProductos(resultado))
+        .catch(error => console.log(error))
+        .finally(() => setCargando(false))
+    }
+  }, [categoriaId])
+    
+
   if (cargando) {
     return (
-      <p>Cargando...</p>
+      <p className='container text-center'>Cargando...</p>
     )
   }
   return ( 
-      <div className="container mt-5 text-center">
+    <div className="container mt-5 text-center">
+      <h1 className='main__titulo'>
+      {props.name}
+      </h1>
         <h3>
-          ¡ Bienvenido al catalogo de {props.name} !
+          ¡ Bienvenido a nuestro catalogo de Productos !
       </h3>
-      <div className="row gap-4 justify-content-center justify-content-sm-center justify-content-md-evenly card-group">
+      <div className="row gap-4 justify-content-center justify-content-sm-center justify-content-md-evenly card-group mt-5">
         <ItemList productos={productos} />
       </div>
       </div>
       )
 }
-export default ItemListContainer;
+export default ItemListContainer

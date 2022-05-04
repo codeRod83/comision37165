@@ -1,20 +1,14 @@
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import Header from './Header'
+import Main from './Main'
+import { BrowserRouter } from 'react-router-dom'
 
 const App = () => {
   return (
-    <>
-    <header>
-      <NavBar />
-    </header>
-    <main className="container">
-        <ItemListContainer name='RM Sistemas' />
-        <ItemDetailContainer name='RM Sistemas' />
-    </main>
-    </>
-    )
-  
+    <BrowserRouter>
+      <Header />
+      <Main />
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
