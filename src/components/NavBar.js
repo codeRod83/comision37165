@@ -4,8 +4,8 @@ import CartWidget from './CartWidget';
 const NavBar = () => { 
     return (
         <>
-        <nav className="header navbar navbar-expand-lg bg-light">
-          <div className="header__contenedor container-fluid justify-content-evenly">
+        <nav className="header__navbar navbar navbar-expand-md navbar-light bg-light">
+          <div className="container-fluid justify-content-evenly">
             <nav className="header__nav navbar navbar-light pt-1">
               <div className="header__logo container">
                   <Link className="navbar-brand" to={'/'}>
@@ -13,65 +13,68 @@ const NavBar = () => {
                   </Link>
               </div>
             </nav>
-            <button className="header__button navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button type="button" className="header__button navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse mx-4" id="navbarSupportedContent">
+            <div className="header__links collapse navbar-collapse mx-4" id="navbarSupportedContent">
               <ul className="navbar-nav align-items-between me-auto mb-2 mb-lg-0">
                 <li>
-                  <NavLink className="header__link nav-link" to={'/categoria/Discos Duros'}>
+                  <NavLink className="header__link px-2 py-2" to={'/categoria/Discos Duros'}>
                     Discos Duros
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="header__link nav-link" to={'/categoria/Mouse'}>
+                  <NavLink className="header__link px-2 py-2" to={'/categoria/Mouse'}>
                     Mouse
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="header__link nav-link" to={'/categoria/Monitores'}>
+                  <NavLink className="header__link px-2 py-2" to={'/categoria/Monitores'}>
                     Monitores
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="header__link nav-link" to={'/categoria/Laptops'}>
+                  <NavLink className="header__link px-2 py-2" to={'/categoria/Laptops'}>
                     Laptops
                   </NavLink>
                 </li>
-                <li id="admMenu" className="nav-item dropdown">
-                  <a className="header__link nav-link dropdown-toggle disabled" href="#top" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                <div id='adm'>
+
+                </div>
+                {/* <li id="admMenu" className="nav-item dropdown">
+                  <a className="header__link px-2 py-2 nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">Categorias</a>
-                  <ul className="adm dropdown-menu" aria-labelledby="navbarDropdown">
-                    {/* <li>
-                      <Link
-                        className="header__link nav-link"
+                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <NavLink
+                        className="dropdown-item header__link nav-link"
                         to={'/categoria/:id'}>
                         Disco Duro
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
-                        className="header__link nav-link"
+                      <NavLink
+                        className="dropdown-item header__link nav-link"
                         to={'/categoria/:id'}>
                         Mouse
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
-                        className="header__link nav-link"
+                      <NavLink
+                        className="dropdown-item header__link nav-link"
                         to={'/categoria/:id'}>
                         Monitores
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                    <Link
-                        className="header__link nav-link"
+                    <NavLink
+                        className="dropdown-item header__link nav-link"
                         to={'/categoria/:id'}>
                         Laptops
-                      </Link>
-                    </li> */}
+                      </NavLink>
+                    </li>
                   </ul>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="header__carrito mx-5">

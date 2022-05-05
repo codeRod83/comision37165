@@ -11,10 +11,15 @@
 }
 
 .header {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
+    &__navbar {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        border-bottom: #ff7300 solid 2px;
+
+
+    }
 
     &__nav {
         margin: 0;
@@ -23,45 +28,49 @@
 
     &__logo {
         background: transparent;
-        border: solid orangered 1px;
+        border: solid orangered 2px;
         border-radius: 50%;
 
         &:hover {
-            border: solid orangered 2px;
+            border: solid orangered 3px;
             border-radius: 50%;
         }
     }
 
     &__link {
+        display: block;
         text-align: center;
         text-decoration: none;
         color: #ff7300;
         font: 500 1rem "M PLUS 1 Code", sans-serif;
-
-        &:hover {
-            color: orangered;
-            font: 500 1rem "M PLUS 1 Code", sans-serif;
-        }
-
-        &:focus {
-            color: orangered;
-            font: 500 1rem "M PLUS 1 Code", sans-serif;
-        }
     }
 
-    &__button {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        background-repeat: no-repeat;
-        background-position: center;
-        border: solid orangered 3px;
+    &__link.disabled {
+        color: rgba(0, 0, 0, .3);
+        pointer-events: none;
+        cursor: default;
+    }
+
+
+    &:hover {
+        color: orangered;
+        font: 500 1rem "M PLUS 1 Code", sans-serif;
+    }
+
+    &:focus {
+        color: orangered;
+        font: 500 1rem "M PLUS 1 Code", sans-serif;
+    }
+
+    &__button.navbar-toggler {
+        background: transparent;
+        border: solid orangered 1.5px;
+        border-radius: 20%;
 
         &:focus {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: center;
-            border: solid orangered 3px;
+            border: solid #ffbc00 2px;
             -webkit-box-shadow: 0 0 0 0.25rem #ffbc00;
-            box-shadow: 0 0 0 0.25rem #ffbc00;
+            box-shadow: #ffbc00 .20rem .20rem .20rem 0.10rem;
             padding: .25rem .75rem;
         }
     }
@@ -74,9 +83,16 @@
 }
 
 .card__container {
-    width: 20.5rem;
+    width: 320px;
     border: 1px solid #ff7300;
     border-radius: .5rem;
+
+    &:hover {
+        width: 330px;
+        border: 1px solid orangered;
+        -webkit-box-shadow: 0 0 0 0.25rem #ffbc00;
+        box-shadow: #ffbc00 .20rem .20rem .20rem 0.10rem;
+    }
 
     &-detail {
         border: 3.5px solid #ff7300;
