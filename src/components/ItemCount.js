@@ -1,13 +1,18 @@
 import { useState } from "react"
 
-const ItemCount = ({ countInicial, stock, onAdd }) => { 
+const ItemCount = ({ countInicial, stock, producto }) => { 
     
+    const onAdd = (count) => {
+        alert(` Se agregaron ${count}\n ${producto.nombre} \n al Carrito`);
+    }
+
     const [count, setCount] = useState(countInicial);
     
     const cambiaCount = (numero) => {
         setCount(count + numero);
     }
     
+
     return (    <div>
         <div className="container mt-3 text-center">
             <button

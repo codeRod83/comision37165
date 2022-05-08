@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { traeProductos } from '../data/data'
+import ItemCount from './ItemCount'
 import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = (props) => {
-   
+
   const [cargando, setCargando] = useState(true)
   const [producto, setProducto] = useState([])
   const { detalleId } = useParams()
@@ -22,14 +23,17 @@ const ItemDetailContainer = (props) => {
     )
   }
     
-    return ( <div className="container mt-5 text-center">
-        <h3>
-            ¡ Detalle de Producto {props.name} !
-        </h3>
-        <div className="my-5">
+  return (
+    <div className="container mt-5 text-center">
+      <h3>
+        ¡ Detalle de Producto {props.name} !
+      </h3>
+      <div className="d-flex flex-row gap-3 card__container-detail align-items-center my-5">
         <ItemDetail producto={producto} />
+        <ItemCount stock={producto.cantidad} producto={producto} countInicial={1} />
       </div>
     </div>
-    )
+  )
 }
+
 export default ItemDetailContainer
