@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Item = ({ producto, detalle }) => {
+const Item = ({ producto }) => {
     return (
         <div className="me-4 col-8 col-md-6 col-lg-5 col-xxl-4 mx-xxl-1 my-4 card__container">
             <div>
@@ -8,14 +8,15 @@ const Item = ({ producto, detalle }) => {
             </div>
             <div className="card__body">
                 <h2 className="card-title text-center">{producto.nombre}</h2>
-                <p className="card-text text-center">
-                    <span className="font-weight-bold">Cantidad:</span> {producto.cantidad}
+                <p className="row align-items-center card-text text-center">
+                    <span className="fs-4 fw-bold mt-3">Cantidad:</span>
+                    <span className="fs-5">{producto.cantidad}</span>
                 </p>
             </div>
             <div className="container mt-3 text-center gap-2 mb-4">
                 <Link to={`/detalle/${producto.id}`}>
-                    <button className="btn btn-warning">
-                        Ver Detalle
+                    <button className="fw-bold btn btn-warning">
+                        Detalles
                     </button>
                 </Link>
             </div>

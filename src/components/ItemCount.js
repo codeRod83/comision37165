@@ -1,45 +1,27 @@
 import { useState } from "react"
+import BtnCount from "./buttons/BtnCount"
+import BtnListCont from "./buttons/BtnListCont"
+import BtnCart from "./buttons/BtnCart"
 
-const ItemCount = ({ countInicial, stock, producto }) => { 
+const ItemCount = ({ producto }) => {
     
-    const onAdd = (count) => {
-        alert(` Se agregaron ${count}\n ${producto.nombre} \n al Carrito`);
-    }
+    const [btnType, setBtnType] = useState("count")
 
-    const [count, setCount] = useState(countInicial);
-    
-    const cambiaCount = (numero) => {
-        setCount(count + numero);
+    const seteaBtn = () => {
+        setBtnType("cart")
     }
-    
 
     return (
-        <div>
-            <div className="container mt-3 text-center">
-                <button
-                    className="btn btn-info"
-                    onClick={() => cambiaCount(-1)}
-                    disabled={count <= 1}
-                >
-                    -
-                </button>
-                <button className="btn btn-light">{count}</button>
-                <button
-                    className="btn btn-info"
-                    onClick={() => cambiaCount(1)}
-                    disabled={count >= stock}
-                >
-                    +
-                </button>
-            </div>
-            <div className="container mt-3 text-center">
-                <button
-                    className="btn btn-primary"
-                    onClick={() => onAdd(count)}
-                >
-                    Agregar al Carrito
-                </button>
-            </div>
+        <div className="container itemCount-container">
+            {
+                btnType === "count" ?
+                    <BtnCount seteaBtn={seteaBtn} countInicial={1} stock={producto.stock} producto={producto} />
+                    :
+                    <>
+                        <BtnListCont />
+                        <BtnCart />
+                    </>
+            }
         </div>
     )
 }

@@ -99,3 +99,14 @@
         border-radius: 6px;
     }
 }
+
+.producto__titulo {
+    font: 500 1.8rem "M PLUS 1p", sans-serif;
+    color: #ff7300;
+}
+
+.itemCount-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}

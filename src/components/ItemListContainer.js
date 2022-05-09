@@ -8,13 +8,14 @@ const ItemListContainer = (props) => {
   const [productos, setProductos] = useState([])
   const [cargando, setCargando] = useState(true)
   const { categoriaId } = useParams()
-  
+  let titulo = 'Productos'
+
   useEffect(() => {
     if (categoriaId) {
       traeProductos
         .then(resultado => setProductos(resultado.filter(item => item.categoria === categoriaId)))
-          .catch(error => console.log(error))
-          .finally(() => setCargando(false))
+        .catch(error => console.log(error))
+        .finally(() => setCargando(false))
     } else {
       traeProductos
         .then(resultado => setProductos(resultado))
@@ -23,7 +24,10 @@ const ItemListContainer = (props) => {
     }
   }, [categoriaId])
     
-
+  if (categoriaId) {
+    titulo = categoriaId
+  }
+  
   if (cargando) {
     return (
       <p className='container text-center'>Cargando...</p>
@@ -35,7 +39,7 @@ const ItemListContainer = (props) => {
       {props.name}
       </h1>
         <h3>
-          ¡ Bienvenido a nuestro catalogo de Productos !
+        ¡ Bienvenido a nuestro catalogo de { titulo } !
       </h3>
       <div className="row gap-4 justify-content-center justify-content-sm-center justify-content-md-evenly card-group mt-5">
         <ItemList productos={productos} />
