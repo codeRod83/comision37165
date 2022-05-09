@@ -15,7 +15,7 @@ const BtnCount = ({ seteaBtn, countInicial, stock, producto }) => {
     
     return (
         <>
-            <div className="container mt-3 px-4">
+            <div className="container mt-3">
                 <button
                     className="btn btn-info"
                     onClick={() => cambiaCount(-1)}
