@@ -10,6 +10,10 @@
     padding: 0 15px;
 }
 
+.text-style {
+    font: 500 15px "M PLUS 1p", sans-serif;
+}
+
 .header {
     &__navbar {
         background-repeat: no-repeat;
@@ -30,9 +34,11 @@
         background: transparent;
         border: solid orangered 2px;
         border-radius: 50%;
+        transition: transform 0.5s;
 
         &:hover {
-            border: solid orangered 3px;
+            transform: scale(1.07);
+            border: solid orangered 2px;
             border-radius: 50%;
         }
     }
@@ -86,9 +92,10 @@
     width: 320px;
     border: 1px solid #ff7300;
     border-radius: .5rem;
+    transition: transform .5s;
 
     &:hover {
-        width: 330px;
+        transform: scale(1.05);
         border: 1px solid orangered;
         -webkit-box-shadow: 0 0 0 0.25rem #ffbc00;
         box-shadow: #ffbc00 .20rem .20rem .20rem 0.10rem;
@@ -97,6 +104,7 @@
     &-detail {
         border: 3.5px solid #ff7300;
         border-radius: 6px;
+        font: 500 15px "M PLUS 1p", sans-serif;
     }
 }
 

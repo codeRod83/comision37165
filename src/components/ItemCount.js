@@ -12,17 +12,19 @@ const ItemCount = ({ producto }) => {
     }
 
     return (
-        <div className="container itemCount-container">
+        <>
             {
                 btnType === "count" ?
                     <BtnCount seteaBtn={seteaBtn} countInicial={1} stock={producto.stock} producto={producto} />
                     :
                     <>
-                        <BtnListCont />
-                        <BtnCart />
+                        <div className="row align-items-center me-3">
+                            <BtnListCont />
+                            <BtnCart />
+                        </div>
                     </>
             }
-        </div>
+        </>
     )
 }
 

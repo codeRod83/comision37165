@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useState } from "react"
 
 const BtnCount = ({ seteaBtn, countInicial, stock, producto }) => {
 
-    const onAdd = (count) => {
-        alert(` Se agregaron ${count}\n ${producto.nombre} \n al Carrito`);
-        seteaBtn()
-    }
-
-    const [count, setCount] = useState(countInicial);
+    const [count, setCount] = useState(countInicial)
     
     const cambiaCount = (numero) => {
-        setCount(count + numero);
+        setCount(count + numero)
+    }
+    
+    const onAdd = (count) => {
+        alert(` Se agregaron ${count}\n ${producto.nombre} \n al Carrito`)
+        seteaBtn()
     }
     
     return (
-        <>
+        <div className="row align-items-center card-text text-center itemCount-container me-3">
             <div className="container mt-3">
                 <button
                     className="btn btn-info"
@@ -34,13 +34,13 @@ const BtnCount = ({ seteaBtn, countInicial, stock, producto }) => {
             </div>
             <div className="container mt-3 text-center">
                 <button
-                    className="fw-bold btn btn-warning"
+                    className="fw-bold btn btn-warning text-style"
                     onClick={onAdd}
                 >
                     Agregar al Carrito
                 </button>
             </div>
-        </>
+        </div>
     )
 }
 

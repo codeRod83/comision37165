@@ -4,7 +4,7 @@ const BtnListCont = () => {
     return (
         <div className="mb-3">
             <Link to="/">
-                <button className="fw-bold btn btn-primary">
+                <button className="fw-bold btn btn-primary text-style">
                     Seguir Comprando
                 </button>
             </Link>

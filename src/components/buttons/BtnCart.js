@@ -4,7 +4,7 @@ const BtnListCont = () => {
     return (
         <>
             <Link to="../cart">
-                <button className="fw-bold btn btn-warning">
+                <button className="fw-bold btn btn-warning text-style ">
                     Ir al Carrito
                 </button>
             </Link>
