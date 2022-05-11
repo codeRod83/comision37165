@@ -9,7 +9,7 @@ const NavBar = () => {
             <nav className="header__nav navbar navbar-light pt-1">
               <div className="header__logo container">
                   <Link className="navbar-brand" to={'/'}>
-                    <img src="./logo.png" alt="Imagen Logo RM Sistemas Informaticos" width="170" height="170" />
+                    <img src="https://res.cloudinary.com/dpcfovbnm/image/upload/v1652255565/logo_qogetq.png" alt="Imagen Logo RM Sistemas Informaticos" width="170" height="170" />
                   </Link>
               </div>
             </nav>

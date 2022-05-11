@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Item from './Item'
 
-const ItemList = (props) => {
-    const productos = props.productos
-    
+
+const ItemList = ( {productos} ) => {
+        
     return (    
         <>
             {productos.map((producto) => 

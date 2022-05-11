@@ -1,33 +1,36 @@
-import { useState } from "react"
+import {  useState } from "react"
+import { useCartContext } from "../../context/cartContext"
 
-const BtnCount = ({ seteaBtn, countInicial, stock, producto }) => {
 
-    const [count, setCount] = useState(countInicial)
+const BtnCount = ({ producto, countInicial, stock, seteaBtn }) => {
+
+    const [cant, setCant] = useState(countInicial)
+    const {addToCart, cartList} = useCartContext()
     
-    const cambiaCount = (numero) => {
-        setCount(count + numero)
+    const cambiaCant = (numero) => {
+        setCant(cant + numero)
     }
     
-    const onAdd = (count) => {
-        alert(` Se agregaron ${count}\n ${producto.nombre} \n al Carrito`)
+    const onAdd = (cant) => {
+        addToCart( { ...producto, cantidad: cant })
         seteaBtn()
     }
     
     return (
-        <div className="row align-items-center card-text text-center itemCount-container me-3">
-            <div className="container mt-3">
+        <div className="itemCount row align-items-center card-text text-center mb-4 me-xl-3">
+            <div className="d-grid gap-1 d-flex justify-content-center mt-3">
                 <button
-                    className="btn btn-info"
-                    onClick={() => cambiaCount(-1)}
-                    disabled={count <= 1}
+                    className="itemCount__btn btn btn-outline-primary"
+                    onClick={() => cambiaCant(-1)}
+                    disabled={cant <= 1}
                 >
                     -
                 </button>
-                <button className="btn btn-light">{count}</button>
+                <button className="fw-bold btn btn-outline-primary disabled">{cant}</button>
                 <button
-                    className="btn btn-info"
-                    onClick={() => cambiaCount(1)}
-                    disabled={count >= stock}
+                    className="itemCount__btn btn btn-outline-primary text-center"
+                    onClick={() => cambiaCant(1)}
+                    disabled={cant >= stock}
                 >
                     +
                 </button>
@@ -35,7 +38,7 @@ const BtnCount = ({ seteaBtn, countInicial, stock, producto }) => {
             <div className="container mt-3 text-center">
                 <button
                     className="fw-bold btn btn-warning text-style"
-                    onClick={onAdd}
+                    onClick={() => onAdd(cant) }
                 >
                     Agregar al Carrito
                 </button>

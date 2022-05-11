@@ -1,7 +1,7 @@
 const inventario = [
     {
         "id": '1',
-        "nombre": "SSD ADATA SU630 ULTIMATE 240GB",
+        "nombre": "SSD adata SU630 ultimate 240gb",
         "marca": "ADATA",
         "costo": 550,
         "cantidad": 10,
@@ -11,7 +11,7 @@ const inventario = [
     },
     {
         "id": '2',
-        "nombre": "DISCO DURO WD BLUE 2TB",
+        "nombre": "disco duro wd blue 2tb",
         "marca": "WD",
         "costo": 950,
         "cantidad": 5,
@@ -21,7 +21,7 @@ const inventario = [
     },
     {
         "id": '3',
-        "nombre": "MOUSE LOGITECH G305 LIGHTSPEED",
+        "nombre": "mouse logitech g305 lightspeed",
         "marca": "LOGITECH",
         "costo": 680,
         "cantidad": 30,
@@ -31,7 +31,7 @@ const inventario = [
     },
     {
         "id": '4',
-        "nombre": "MONITOR LED 27 DELL S2719DGF QHD 2K 165HZ 1MS",
+        "nombre": "monitor LED 27 dell S2719DGF QHD 2k 165hz 1ms",
         "marca": "DELL",
         "costo": 10500,
         "cantidad": 3,
@@ -41,7 +41,7 @@ const inventario = [
     },
     {
         "id": '5',
-        "nombre": "LAPTOP GAMER ALIENWARE AREA 51M R2 17.3",
+        "nombre": "laptop gamer alienware area 51m r2 17.3",
         "marca": "ALIENWARE",
         "costo": 77900,
         "cantidad": 5,
@@ -56,7 +56,7 @@ export const traeProductos = new Promise((resolve, reject) => {
     if (estado) {
         setTimeout(() => {
             resolve(inventario)
-        }, 2000)
+        }, 1000)
     } else {
         reject('Error')
     }

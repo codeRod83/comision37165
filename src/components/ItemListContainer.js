@@ -2,6 +2,7 @@ import { traeProductos } from '../data/data'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from "./ItemList"
+import CartContextProvider from '../context/cartContext'
 
 const ItemListContainer = (props) => {
   
@@ -33,18 +34,19 @@ const ItemListContainer = (props) => {
       <p className='container text-center'>Cargando...</p>
     )
   }
-  return ( 
+  return (
     <div className="container mt-5 text-center">
-      <h1 className='main__titulo'>
-      {props.name}
+      <h1 className='fw-bold main__titulo'>
+        {props.name}
       </h1>
-        <h3>
-        ¡ Bienvenido a nuestro catalogo de { titulo } !
+      <h3>
+        ¡ Bienvenido a nuestro catalogo de {titulo} !
       </h3>
       <div className="row gap-4 justify-content-center justify-content-sm-center justify-content-md-evenly card-group mt-5">
-        <ItemList productos={productos} />
+        <ItemList productos={ productos } />
       </div>
-      </div>
-      )
+    </div>
+  )
 }
+
 export default ItemListContainer

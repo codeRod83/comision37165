@@ -7,7 +7,7 @@ const Item = ({ producto }) => {
                 <img src={producto.thumbnailUrl} className="card__image card-img-top" alt="Foto del producto" />
             </div>
             <div className="card__body">
-                <h2 className="card-title text-center">{producto.nombre}</h2>
+                <h2 className="card-title text-capitalize text-center fs-5">{producto.nombre}</h2>
                 <p className="row align-items-center card-text text-center">
                     <span className="fs-4 fw-bold mt-3">Cantidad:</span>
                     <span className="fs-5">{producto.cantidad}</span>

@@ -10,8 +10,17 @@
     padding: 0 15px;
 }
 
+$main-color: #ff7300;
+$secondary-color: #ffbc00;
+$main-border: 1px solid $main-color;
+$font-1: 500 15px 'Roboto', sans-serif;
+$font-2: 500 1.8rem 'Roboto', sans-serif;
+
 .text-style {
-    font: 500 15px "M PLUS 1p", sans-serif;
+    &__title {
+        font: $font-1;
+        color: $main-color;
+    }
 }
 
 .header {
@@ -20,9 +29,7 @@
         background-size: cover;
         background-position: center;
         overflow: hidden;
-        border-bottom: #ff7300 solid 2px;
-
-
+        border-bottom: solid 2px;
     }
 
     &__nav {
@@ -32,13 +39,13 @@
 
     &__logo {
         background: transparent;
-        border: solid orangered 2px;
+        border: solid $main-color 2px;
         border-radius: 50%;
         transition: transform 0.5s;
 
         &:hover {
             transform: scale(1.07);
-            border: solid orangered 2px;
+            border: solid $main-color 2px;
             border-radius: 50%;
         }
     }
@@ -47,8 +54,8 @@
         display: block;
         text-align: center;
         text-decoration: none;
-        color: #ff7300;
-        font: 500 1rem "M PLUS 1 Code", sans-serif;
+        color: $main-color;
+        font: $font-1;
     }
 
     &__link.disabled {
@@ -59,24 +66,24 @@
 
 
     &:hover {
-        color: orangered;
-        font: 500 1rem "M PLUS 1 Code", sans-serif;
+        color: $main-color;
+        font: $font-1;
     }
 
     &:focus {
-        color: orangered;
-        font: 500 1rem "M PLUS 1 Code", sans-serif;
+        color: $main-color;
+        font: $font-1;
     }
 
     &__button.navbar-toggler {
         background: transparent;
-        border: solid orangered 1.5px;
+        border: solid $main-color 1.5px;
         border-radius: 20%;
 
         &:focus {
-            border: solid #ffbc00 2px;
-            -webkit-box-shadow: 0 0 0 0.25rem #ffbc00;
-            box-shadow: #ffbc00 .20rem .20rem .20rem 0.10rem;
+            border: solid $secondary-color 2px;
+            -webkit-box-shadow: 0 0 0 0.25rem $secondary-color;
+            box-shadow: $secondary-color .20rem .20rem .20rem 0.10rem;
             padding: .25rem .75rem;
         }
     }
@@ -84,37 +91,49 @@
 
 .main__titulo {
     text-align: center;
-    font: 500 "M PLUS 1p", sans-serif;
-    color: #ff7300;
+    font: $font-2;
+    color: $main-color;
 }
 
 .card__container {
     width: 320px;
-    border: 1px solid #ff7300;
+    border: $main-border;
     border-radius: .5rem;
     transition: transform .5s;
 
     &:hover {
         transform: scale(1.05);
-        border: 1px solid orangered;
-        -webkit-box-shadow: 0 0 0 0.25rem #ffbc00;
-        box-shadow: #ffbc00 .20rem .20rem .20rem 0.10rem;
+        border: $main-border;
+        -webkit-box-shadow: 0 0 0 0.25rem $secondary-color;
+        box-shadow: $secondary-color .20rem .20rem .20rem 0.10rem;
     }
+}
 
-    &-detail {
-        border: 3.5px solid #ff7300;
+.itemDetail {
+
+    &__container {
+        border: 3.5px solid $main-color;
         border-radius: 6px;
-        font: 500 15px "M PLUS 1p", sans-serif;
+        font: $font-1;
+    }
+
+    &__titulo {
+        font: $font-2;
+        color: $main-color;
     }
 }
 
-.producto__titulo {
-    font: 500 1.8rem "M PLUS 1p", sans-serif;
-    color: #ff7300;
-}
-
-.itemCount-container {
+.itemCount {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
     width: 30%;
+
+    &__btn {
+        width: 35px;
+    }
+
+    &__number {
+        border: #ffbc00 solid 1px;
+    }
 }
