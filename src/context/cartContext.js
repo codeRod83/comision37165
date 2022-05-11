@@ -14,15 +14,14 @@ function CartContextProvider({ children }) {
         if (idx !== -1) {
             const newCartList = cartList
             const newCant = cartList[idx].cantidad + producto.cantidad
-            // console.log(cartList[idx].cantidad)
             if (newCant <= producto.stock) {
                 newCartList[idx].cantidad = newCant
                 setCartList([...newCartList])
-            } else {
-                const restCant = cartList[idx].cantidad - producto.cantidad
-                // console.log(restCant)
-                alert(`No hay stock suficiente\n El Stock disponible es: ${restCant}`)
             }
+            // else {
+            //     const restCant = cartList[idx].cantidad - producto.cantidad
+            //     alert(`No hay stock suficiente\n El Stock disponible es: ${restCant}`)
+            // }
         } else {
             setCartList([...cartList, producto])
         }
