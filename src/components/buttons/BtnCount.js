@@ -5,14 +5,15 @@ import { useCartContext } from "../../context/cartContext"
 const BtnCount = ({ producto, countInicial, stock, seteaBtn }) => {
 
     const [cant, setCant] = useState(countInicial)
-    const {addToCart, cartList} = useCartContext()
+    const { addToCart } = useCartContext()
     
     const cambiaCant = (numero) => {
         setCant(cant + numero)
     }
+
     
     const onAdd = (cant) => {
-        addToCart( { ...producto, cantidad: cant })
+        addToCart({ ...producto, cantidad: cant, stock })
         seteaBtn()
     }
     

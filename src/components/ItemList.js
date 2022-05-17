@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Item from './Item'
 
 
@@ -7,7 +7,7 @@ const ItemList = ( {productos} ) => {
     return (    
         <>
             {productos.map((producto) => 
-                    <Item key={producto.id} producto={producto}/>
+                <Item key={producto.id} producto={producto} costo={producto.costo} stock={producto.cantidad}/>
             )}
         </>
     )

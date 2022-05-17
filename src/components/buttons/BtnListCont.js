@@ -2,9 +2,9 @@ import { Link } from "react-router-dom"
 
 const BtnListCont = () => {
     return (
-        <div className="mb-3">
+        <div>
             <Link to="/">
-                <button className="fw-bold btn btn-primary text-style">
+                <button className="btn__ListContainer fw-bold btn btn-outline-warning text-style">
                     Seguir Comprando
                 </button>
             </Link>

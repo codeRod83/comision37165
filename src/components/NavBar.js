@@ -77,10 +77,11 @@ const NavBar = () => {
                 </li> */}
               </ul>
             </div>
-            <div className="header__carrito mx-5">
+            <div>
             <CartWidget />
             </div>
-          </div></nav>
+          </div>
+        </nav>
       </>
   )
 }

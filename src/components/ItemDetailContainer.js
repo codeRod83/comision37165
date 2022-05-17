@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom'
 import { traeProductos } from '../data/data'
 import ItemCount from './ItemCount'
 import ItemDetail from './ItemDetail'
+import { Spinner } from 'reactstrap'
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = () => {
 
   const [cargando, setCargando] = useState(true)
   const [producto, setProducto] = useState([])
@@ -19,18 +20,23 @@ const ItemDetailContainer = (props) => {
   
   if (cargando) {
     return (
-      <p></p>
+      <div className="container mt-5 text-center">
+        <Spinner color="warning" />
+        <p>Cargando ...</p>
+      </div>
     )
   }
+    const stock = producto.cantidad
+  
     
   return (
     <div className="container itemDetail mt-5 text-center">
       <h3 className='fw-bold text-uppercase itemDetail__titulo'>
         {producto.nombre}
       </h3>
-      <div className="d-flex flex-column flex-xl-row gap-3 itemDetail__container align-items-center my-5">
+      <div className="d-flex itemDetail__container my-5">
         <ItemDetail producto={producto} />
-        <ItemCount producto={producto} />
+        <ItemCount producto={producto} stock= {producto.cantidad} />
       </div>
     </div>
   )

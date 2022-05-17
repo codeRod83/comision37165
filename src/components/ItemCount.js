@@ -2,7 +2,6 @@ import { useState } from "react"
 import BtnCount from "./buttons/BtnCount"
 import BtnListCont from "./buttons/BtnListCont"
 import BtnCart from "./buttons/BtnCart"
-// import { useCartContext } from "../context/cartContext"
 
 const ItemCount = ({ producto }) => {
     

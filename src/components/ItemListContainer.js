@@ -2,7 +2,7 @@ import { traeProductos } from '../data/data'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from "./ItemList"
-import CartContextProvider from '../context/cartContext'
+import { Spinner } from 'reactstrap'
 
 const ItemListContainer = (props) => {
   
@@ -31,7 +31,10 @@ const ItemListContainer = (props) => {
   
   if (cargando) {
     return (
-      <p className='container text-center'>Cargando...</p>
+      <div className="container mt-5 text-center">
+        <Spinner color="primary" />
+        <p>Cargando ...</p>
+      </div>
     )
   }
   return (

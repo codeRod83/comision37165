@@ -11,7 +11,7 @@ const inventario = [
     },
     {
         "id": '2',
-        "nombre": "disco duro wd blue 2tb",
+        "nombre": "disco duro Mecanico WD blue 2tb 3.5 SATA 3",
         "marca": "WD",
         "costo": 950,
         "cantidad": 5,
@@ -56,7 +56,7 @@ export const traeProductos = new Promise((resolve, reject) => {
     if (estado) {
         setTimeout(() => {
             resolve(inventario)
-        }, 1000)
+        }, 2000)
     } else {
         reject('Error')
     }
