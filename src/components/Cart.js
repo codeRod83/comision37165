@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import BtnListCont from "./buttons/BtnListCont"
 import { useCartContext } from "../context/cartContext"
 
@@ -13,7 +12,7 @@ const Cart = () => {
             {cartList.map((producto) => (
                 <div key={producto.id} className="container" >
                     <div className="row gap-3">
-                        <div className="col-9 d-flex flex-column flex-xl-row gap-1 itemDetail__container align-items-center my-5">
+                        <div className="col d-flex flex-column flex-xl-row justify-content-around gap-1 itemDetail__container align-items-center my-5">
                             <div className="d-flex justify-content-center">
                                 <img src={producto.thumbnailUrl}
                                     className="card__image--cart card-img-top"

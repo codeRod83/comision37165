@@ -26,11 +26,11 @@ const ItemDetailContainer = () => {
       </div>
     )
   }
-    const stock = producto.cantidad
+    // const stock = producto.cantidad
   
     
   return (
-    <div className="container itemDetail mt-5 text-center">
+    <div className="itemDetail mt-5 text-center">
       <h3 className='fw-bold text-uppercase itemDetail__titulo'>
         {producto.nombre}
       </h3>
