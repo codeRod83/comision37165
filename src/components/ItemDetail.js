@@ -6,7 +6,7 @@ const ItemDetail = ( {producto} ) => {
         <>
             <div className="d-flex flex-column flex-xl-row align-items-center gap-3 my-4">
                 <div className="row align-items-start ms-xl-2">
-                    <img src={producto.thumbnailUrl} className="card__image--detail card-img-top" alt="Foto del producto" />
+                    <img src={producto.imagen} className="card__image--detail card-img-top" alt="Foto del producto" />
                 </div>
                 <div className="card__body mx-2">
                     <p className="row align-items-center card-text text-center">

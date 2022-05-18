@@ -1,5 +1,5 @@
-import BtnListCont from "./buttons/BtnListCont"
-import { useCartContext } from "../context/cartContext"
+import BtnListCont from "../buttons/BtnListCont"
+import { useCartContext } from "../../context/cartContext"
 
 const Cart = () => { 
 
@@ -10,11 +10,11 @@ const Cart = () => {
                 <h1>Carrito de Compras</h1>
             </div>
             {cartList.map((producto) => (
-                <div key={producto.id} className="container" >
+                <div key={producto.id} className="container cart" >
                     <div className="row gap-3">
                         <div className="col d-flex flex-column flex-xl-row justify-content-around gap-1 itemDetail__container align-items-center my-5">
                             <div className="d-flex justify-content-center">
-                                <img src={producto.thumbnailUrl}
+                                <img src={producto.imagen}
                                     className="card__image--cart card-img-top"
                                     alt="Foto del producto"
                                 />

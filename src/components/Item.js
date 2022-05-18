@@ -4,7 +4,7 @@ const Item = ({ producto, stock, costo }) => {
     return (
         <div className="me-4 col-8 col-md-6 col-lg-5 col-xxl-4 mx-xxl-1 my-4 card__container">
             <div>
-                <img src={producto.thumbnailUrl} className="card__image card-img-top" alt="Foto del producto" />
+                <img src={producto.imagen} className="card__image card-img-top" alt="Foto del producto" />
             </div>
             <div className="card__body">
                 <h2 className="card-title text-capitalize text-center fs-5">{producto.nombre}</h2>

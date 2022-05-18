@@ -1,14 +1,13 @@
-// 1) Tener la variable react en scope
-import React from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './styles.scss'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min'
+import { getFirestoreApp } from './firebase/config'
 
-// 2) Tener la variable reactDOM en scope
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './styles.scss';
+getFirestoreApp()
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 
-// 4) Hacer render de la App en el DOM
-root.render(<App />);
+root.render(<App />)

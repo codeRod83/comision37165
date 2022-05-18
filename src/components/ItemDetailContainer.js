@@ -1,23 +1,27 @@
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { traeProductos } from '../data/data'
+import { Spinner } from 'reactstrap'
 import ItemCount from './ItemCount'
 import ItemDetail from './ItemDetail'
-import { Spinner } from 'reactstrap'
 
 const ItemDetailContainer = () => {
 
   const [cargando, setCargando] = useState(true)
-  const [producto, setProducto] = useState([])
+  const [producto, setProducto] = useState({})
   const { detalleId } = useParams()
+  console.log(detalleId)
   
   useEffect(() => {
-    traeProductos
-      .then( resultado => setProducto(resultado.find(item => item.id === detalleId)) )
-      .catch( error => console.log(error))
+    const querydb = getFirestore()
+    const queryProd = doc(querydb, `productos/${detalleId}`)
+
+    getDoc(queryProd)
+      .then(resultado => setProducto({ id: resultado.id, ...resultado.data() }))
+      .catch(error => console.log(error))
       .finally(() => setCargando(false))
-  }, [])
-  
+  }, [detalleId])
+
   if (cargando) {
     return (
       <div className="container mt-5 text-center">
@@ -27,7 +31,6 @@ const ItemDetailContainer = () => {
     )
   }
     // const stock = producto.cantidad
-  
     
   return (
     <div className="itemDetail mt-5 text-center">
