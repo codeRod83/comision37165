@@ -1,4 +1,7 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { createContext, useContext, useState } from "react"
+// import Swal from "sweetalert2"
+// import 'sweetalert2/src/sweetalert2.scss'
 
 const CartContext = createContext([])
 
@@ -6,13 +9,15 @@ export const useCartContext = () => useContext(CartContext)
 
 function CartContextProvider({ children }) {
     
+    const buyer = { name: "Rodrigo Floreschapa", email: "rodrfd@gmail.com", phone: "3123123123" }
     const [cartList, setCartList] = useState([])
     const [cartTotal, setCartTotal] = useState(0)
     const [cartCount, setCartCount] = useState(0)
-    // const [stockDisp, setStockDisp] = useState(0)
+    const [ordenId, setOrdenId] = useState()
     
     
-    const addToCart = (producto, cantidad, stock) => {
+        
+    const addToCart = (producto) => {
         const idx = cartList.findIndex(prod => producto.id === prod.id)
         
         if (idx !== -1) {
@@ -25,18 +30,12 @@ function CartContextProvider({ children }) {
             setCartList([...cartList, producto])
             totalCost([...cartList, producto])
             cartCant([...cartList, producto])
+            
         }
-        // if ((newCartList[idx].cantidad + producto.cantidad) <= stock) {
-        // } else {
-        //         const restCant = stock - newCartList[idx].cantidad
-        //         alert(`No hay stock suficiente\n El Stock disponible es: ${restCant}`)
-        // }
     }
-    
     const cartCant = (props) => {
         setCartCount(props.reduce((acc, curr) => acc + (curr.cantidad), 0))
     }
-            
     const totalCost = (props) => {
         setCartTotal(props.reduce((acc, curr) => acc + (curr.cantidad * curr.costo), 0))
     }
@@ -51,6 +50,31 @@ function CartContextProvider({ children }) {
         setCartList([])
         setCartTotal(0)
     }
+    const genOrder = async (e) => {
+        e.preventDefault()
+        let orden = {}
+        orden.cliente = {
+            nombre: "Rodrigo",
+            email: "rodrfd@gmail.com",
+            telefono: "3123123123"
+        }
+        orden.total = cartTotal
+
+        orden.productos = cartList.map(cartProd => {
+            const id = cartProd.id
+            const nombre = cartProd.nombre
+            const cantidad = cartProd.cantidad
+            const costo = cartProd.costo * cartProd.cantidad
+            return { id, nombre, cantidad, costo }
+        })
+        const db = getFirestore()
+        const queryCollection = collection(db, "ordenes")
+        await addDoc(queryCollection, orden)
+            .then( res  => setOrdenId({ id: res.id, ...res.data() }))
+            .catch(error => console.log(error))
+            .finally( clearCart, console.log(ordenId.id) )
+    }
+
 
     return (
         <>
@@ -61,7 +85,10 @@ function CartContextProvider({ children }) {
                 addToCart,
                 cartCant,
                 removeFromCart,
-                clearCart
+                clearCart,
+                buyer,
+                genOrder
+                
             }}>
                 {children}
             </CartContext.Provider>

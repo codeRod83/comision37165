@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
   const [cargando, setCargando] = useState(true)
   const [producto, setProducto] = useState({})
   const { detalleId } = useParams()
-  console.log(detalleId)
+  
   
   useEffect(() => {
     const querydb = getFirestore()
@@ -30,6 +30,7 @@ const ItemDetailContainer = () => {
       </div>
     )
   }
+
     // const stock = producto.cantidad
     
   return (
@@ -39,7 +40,7 @@ const ItemDetailContainer = () => {
       </h3>
       <div className="d-flex itemDetail__container my-5">
         <ItemDetail producto={producto} />
-        <ItemCount producto={producto} stock= {producto.cantidad} />
+        <ItemCount producto={producto} />
       </div>
     </div>
   )

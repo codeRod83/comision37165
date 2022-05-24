@@ -3,7 +3,7 @@ import { useCartContext } from "../../context/cartContext"
 
 const Cart = () => { 
 
-    const { cartList, removeFromCart, clearCart, cartTotal } = useCartContext()
+    const { cartList, removeFromCart, clearCart, cartTotal, genOrder } = useCartContext()
     return (
         <>
             <div className="container text-center mt-5">
@@ -57,6 +57,20 @@ const Cart = () => {
                             </span>
                             <p>Vaciar Carrito</p>
                         </div>
+                        <div className="container d-flex row justify-content-center gap-3">
+                            <div className="input-group gap-3">
+                                <span className="input-group-text">Nombre Completo</span>
+                                <input type="text" aria-label="First name" className="form-control" placeholder="Nombre y Apellido"/>
+                            </div>
+                            <div className="input-group gap-3">
+                                <span className="input-group-text">Correo Electronico</span>
+                                <input type="email" aria-label="Email" className="form-control" placeholder="@mail" />
+                            </div>
+                            <div className="input-group gap-3">
+                                <span className="input-group-text">Telefono</span>
+                                <input type="phone" aria-label="Phone" className="form-control" placeholder="Telefono" />
+                            </div>
+                        </div>
                         <div className="d-flex flex-row gap-5 align-items-center mx-auto">
                             <div className="d-flex flex-row gap-3 align-items-center ">
                                 <h2 className="$font-1 text-primary">TOTAL : </h2>
@@ -64,7 +78,7 @@ const Cart = () => {
                             </div>
                             <div className="col d-flex flex-row gap-5 align-items-center my-5">
                                 <BtnListCont />
-                                <button className="btn btn-outline-primary">Terminar Compra</button>
+                                <button className="btn btn-outline-primary" onClick={ genOrder }>Terminar Compra</button>
                             </div>
                         </div>
                     </div>

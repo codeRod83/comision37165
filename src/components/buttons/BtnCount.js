@@ -7,13 +7,14 @@ const BtnCount = ({ producto, countInicial, stock, seteaBtn }) => {
     const [cant, setCant] = useState(countInicial)
     const { addToCart } = useCartContext()
     
+    
     const cambiaCant = (numero) => {
         setCant(cant + numero)
     }
 
     
     const onAdd = (cant) => {
-        addToCart({ ...producto, cantidad: cant, stock })
+        addToCart({ ...producto, cantidad: cant })
         seteaBtn()
     }
     
@@ -39,7 +40,8 @@ const BtnCount = ({ producto, countInicial, stock, seteaBtn }) => {
             <div className="container mt-3 text-center">
                 <button
                     className="fw-bold btn btn-warning text-style"
-                    onClick={() => onAdd(cant) }
+                    onClick={() => onAdd(cant)}
+                    disabled={cant > stock}
                 >
                     Agregar al Carrito
                 </button>
