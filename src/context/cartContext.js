@@ -1,6 +1,6 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { createContext, useContext, useState } from "react"
-// import Swal from "sweetalert2"
+import Swal from "sweetalert2"
 // import 'sweetalert2/src/sweetalert2.scss'
 
 const CartContext = createContext([])
@@ -13,9 +13,10 @@ function CartContextProvider({ children }) {
     const [cartList, setCartList] = useState([])
     const [cartTotal, setCartTotal] = useState(0)
     const [cartCount, setCartCount] = useState(0)
-    const [ordenId, setOrdenId] = useState()
     
-    
+    const muestraId = (id) => {
+        Swal.fire("Se genero la orden con el id:", `${id}`, "success")
+    }
         
     const addToCart = (producto) => {
         const idx = cartList.findIndex(prod => producto.id === prod.id)
@@ -70,9 +71,9 @@ function CartContextProvider({ children }) {
         const db = getFirestore()
         const queryCollection = collection(db, "ordenes")
         await addDoc(queryCollection, orden)
-            .then( res  => setOrdenId({ id: res.id, ...res.data() }))
+            .then( ({id})  => muestraId(id))
             .catch(error => console.log(error))
-            .finally( clearCart, console.log(ordenId.id) )
+            .finally( clearCart )
     }
 
 
