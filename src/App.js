@@ -1,4 +1,4 @@
-import NavBar from "./components/navBar/NavBar"
+import NavBar from "./components/navbar/NavBar"
 import Main from './Main'
 import { BrowserRouter } from 'react-router-dom'
 import CartContextProvider from './context/cartContext'
