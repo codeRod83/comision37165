@@ -1,0 +1,20 @@
+.card {
+    &__container {
+        width: 320px;
+        border: $main-border;
+        border-radius: .5rem;
+        transition: transform .1s;
+
+        &:hover {
+            transform: scale(1.05);
+            border: $main-border;
+            -webkit-box-shadow: 0 0 0 0.25rem $secondary-color;
+            box-shadow: $secondary-color .20rem .20rem .20rem 0.10rem;
+        }
+    }
+
+    &-image__container img {
+        width: 50%;
+
+    }
+}

@@ -4,7 +4,7 @@ const BtnListCont = () => {
     return (
         <div>
             <Link to="/">
-                <button className="btn__ListContainer fw-bold btn btn-outline-warning text-style">
+                <button className="btn__ListContainer fw-bold text-style">
                     Seguir Comprando
                 </button>
             </Link>

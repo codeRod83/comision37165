@@ -1,7 +1,6 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { createContext, useContext, useState } from "react"
 import Swal from "sweetalert2"
-// import 'sweetalert2/src/sweetalert2.scss'
 
 const CartContext = createContext([])
 
@@ -89,7 +88,6 @@ function CartContextProvider({ children }) {
                 clearCart,
                 buyer,
                 genOrder
-                
             }}>
                 {children}
             </CartContext.Provider>

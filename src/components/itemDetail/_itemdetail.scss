@@ -1,0 +1,19 @@
+.itemDetail {
+
+    &__titulo {
+        font: $font-2;
+        color: $main-color;
+    }
+}
+
+.itemCount {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 30%;
+
+    &__btn {
+        width: 35px;
+    }
+
+}

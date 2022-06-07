@@ -4,7 +4,7 @@ import ItemList from "./ItemList"
 import { Spinner } from 'reactstrap'
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({name}) => {
   
   const [productos, setProductos] = useState([])
   const [cargando, setCargando] = useState(true)
@@ -36,7 +36,7 @@ const ItemListContainer = (props) => {
   if (cargando) {
     return (
       <div className="container mt-5 text-center">
-        <Spinner color="primary" />
+        <Spinner color="warning" />
         <p>Cargando ...</p>
       </div>
     )
@@ -44,7 +44,7 @@ const ItemListContainer = (props) => {
   return (
     <div className="container mt-5 text-center">
       <h1 className='fw-bold main__titulo'>
-        {props.name}
+        {name}
       </h1>
       <h3>
         ¡ Bienvenido a nuestro catalogo de {titulo} !

@@ -1,0 +1,63 @@
+.cart {
+    &__container {
+        border: 3.5px solid $main-color;
+        border-radius: 6px;
+        font: $font-1;
+    }
+
+    &__image img {
+        width: 50%;
+    }
+
+    &__titulo {
+        font: $font-2;
+        color: $main-color;
+    }
+
+    &__icon {
+
+        &--delete {
+            padding: auto;
+            cursor: pointer;
+            color: #ff7300;
+            background: transparent;
+            border: solid $main-color 1.5px;
+            border-radius: 10%;
+            transition: transform .3s;
+
+            &:hover {
+                transform: scale(1.5);
+                border: solid $main-color 1.5px;
+                border-radius: 10%;
+                box-shadow: $secondary-color .20rem .20rem .20rem 0.10rem;
+            }
+        }
+
+        &--clear {
+            cursor: pointer;
+            color: #e20e0e;
+            background: transparent;
+            border: solid $main-color 1.5px;
+            border-radius: 5%;
+            transition: transform .3s;
+
+            &:hover {
+                transform: scale(1.2);
+                border: solid #e20e0e 1.5px;
+                border-radius: 5%;
+                box-shadow: rgba(255, 0, 0, 0.688) .20rem .20rem .20rem 0.10rem;
+            }
+        }
+
+        p {
+            font: 500 1.3rem 'Roboto', sans-serif;
+            color: #e20e0e;
+        }
+    }
+
+    &__total {
+        border: 1.5px solid $secondary-color;
+        border-radius: 6px;
+        font: $font-1;
+    }
+}

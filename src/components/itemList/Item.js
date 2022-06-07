@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 const Item = ({ producto, costo }) => {
     return (
-        <div className="me-4 col-8 col-md-6 col-lg-5 col-xxl-4 mx-xxl-1 my-4 card__container">
-            <div>
+        <div className="d-flex row me-4 col-8 col-md-6 col-lg-5 col-xxl-4 mx-xxl-1 mb-5 card__container">
+            <div className='card-image__container'>
                 <img src={producto.imagen} className="card__image card-img-top" alt="Foto del producto" />
             </div>
             <div className="card__body">
@@ -15,7 +15,7 @@ const Item = ({ producto, costo }) => {
             </div>
             <div className="container text-center gap-2 my-4">
                 <Link to={`/detalle/${producto.id}`}>
-                    <button className="fw-bold btn btn-warning">
+                    <button className="fw-bold btn__ListContainer">
                         Detalles
                     </button>
                 </Link>

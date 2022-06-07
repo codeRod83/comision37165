@@ -1,5 +1,5 @@
-import ItemListContainer from "./components/ItemListContainer"
-import ItemDetailContainer from "./components/ItemDetailContainer"
+import ItemListContainer from "./components/itemList/ItemListContainer"
+import ItemDetailContainer from "./components/itemDetail/ItemDetailContainer"
 import Cart from "./components/cart/Cart"
 import { Route, Routes } from "react-router-dom"
 

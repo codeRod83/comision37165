@@ -1,0 +1,28 @@
+@mixin button ($color) {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: solid $color 1px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+$main-color: #ff7300;
+$secondary-color: #ffbc00;
+$third-color: rgb(0, 30, 255);
+$shadow-color2: rgba(0, 0, 255, 0.669);
+$main-border: 1px solid $main-color;
+$font-1: 500 15px 'Roboto', sans-serif;
+$font-2: 500 1.8rem 'Roboto', sans-serif;
+$shadow-1: $secondary-color .20rem .20rem .20rem 0.10rem;

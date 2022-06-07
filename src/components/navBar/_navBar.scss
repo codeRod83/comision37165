@@ -1,0 +1,86 @@
+.header {
+    &__navbar {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        border-bottom: solid $main-color 1.5px;
+    }
+
+    &__nav {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__logo {
+        background: transparent;
+        border: solid $main-color 2px;
+        border-radius: 50%;
+        transition: transform 0.5s;
+
+        &:hover {
+            transform: scale(1.07);
+            border: solid $main-color 2px;
+            border-radius: 50%;
+        }
+    }
+
+    &__button.navbar-toggler {
+        background: transparent;
+        border: solid $main-color 1.5px;
+        border-radius: 20%;
+
+        &:focus {
+            border: solid $secondary-color 2px;
+            -webkit-box-shadow: 0 0 0 0.25rem $secondary-color;
+            box-shadow: $shadow-1;
+            padding: .25rem .75rem;
+        }
+    }
+
+    &__link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: $main-color;
+        font: $font-1;
+
+        &.disabled {
+            color: rgba(0, 0, 0, .3);
+            pointer-events: none;
+            cursor: default;
+        }
+
+        &:hover {
+            color: $main-color;
+            font: 500 17px 'Roboto', sans-serif;
+            box-shadow: $shadow-1;
+        }
+
+        &:focus {
+            color: gray;
+            cursor: default;
+            font: $font-1;
+        }
+    }
+
+    &__cartWidget {
+        background: transparent;
+        border-radius: 5%;
+        padding: 0 2rem;
+
+
+        &:hover {
+            transform: scale(1.05);
+            border: solid $main-color 1px;
+            box-shadow: $secondary-color .20rem .20rem .20rem 0.10rem;
+        }
+
+        &--cantidad {
+            background: transparent;
+
+            text-align: center;
+        }
+    }
+
+}
