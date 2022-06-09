@@ -11,15 +11,19 @@ const ItemCount = ({ producto }) => {
     const { cartList } = useCartContext()
     
     useEffect(() => {
+        checkStock()
+    },)
+    
+    const checkStock = () => {
         const idx = cartList.findIndex(prod => producto.id === prod.id)
         
         if (idx !== -1) {
             setStock(producto.cantidad - cartList[idx].cantidad)
-        } else {
+        }
+        else {
             setStock(producto.cantidad)
         }
-    }, [])
-    
+    }
 
     const seteaBtn = () => {
         setBtnType("cart")
