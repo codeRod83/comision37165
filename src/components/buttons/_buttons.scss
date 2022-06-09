@@ -1,0 +1,25 @@
+.btn {
+    &__Cart {
+        @include button($third-color);
+
+        &:hover {
+            color: $third-color;
+            background: transparent;
+            transform: scale(1.05);
+            border: solid $third-color 1px;
+            box-shadow: $shadow-color2 .20rem .20rem .20rem 0.10rem;
+        }
+    }
+
+    &__ListContainer {
+        @include button($main-color);
+
+        &:hover {
+            color: $main-color;
+            background: transparent;
+            transform: scale(1.05);
+            border: solid $main-color 1px;
+            box-shadow: $secondary-color .20rem .20rem .20rem 0.10rem;
+        }
+    }
+}
