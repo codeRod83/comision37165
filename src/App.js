@@ -1,7 +1,8 @@
-import NavBar from "./components/navbar/NavBar"
+
 import Main from './Main'
 import { BrowserRouter } from 'react-router-dom'
 import CartContextProvider from './context/cartContext'
+import Navbar from "./components/navBar/NavBar"
 
 const App = () => {
   return (
@@ -9,7 +10,7 @@ const App = () => {
       value={{}}
     >
       <BrowserRouter>
-        <NavBar  />
+        <Navbar  />
         <Main />
       </BrowserRouter>
     </CartContextProvider>
