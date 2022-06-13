@@ -5,7 +5,6 @@
 ## Tabla de Contenido
 
 - [Descripción](#Descripción)
-- []()
 
 
 ## Descripción
